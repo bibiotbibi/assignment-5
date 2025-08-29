@@ -10,9 +10,9 @@
 </head>
 
 
-<body>
-  <nav class=" flex items-center justify-between mx-10 my-3">
-    <div class="flex gap-3 ">
+<body class=" ">
+  <nav class=" flex flex-col sm:flex-row items-center justify-between mx-auto py-3 px-4 ">
+    <div class="flex items-center gap-3 ">
         <div class="w-11 mt-2 ">
             <img src="img/logo.png" alt="">
         </div>
@@ -22,22 +22,22 @@
     </div>
 
 
-   <div class="flex gap-5">
+   <div class="flex items-center gap-5">
      <div class="bg-[#41FF6B]/10 px-5 py-2 rounded-3xl flex gap-2"> 
-        <p class="font-bold">0</p>
-        <img class="w-5" src="img/heart.png" alt="">
+        <p id="heart" class="font-bold">0</p>
+        <img  class="w-5" src="img/heart.png" alt="">
     </div>
     <div class="bg-[#41FF6B]/10 px-5 py-2 rounded-3xl flex gap-2"> 
-        <p class="font-bold">100</p>
+        <p class="font-bold" id="coin">100</p>
         <img class="w-5" src="img/coin.png" alt="">
     </div>
-    <button class="btn btn-active rounded-3xl px-5 py-2 bg-[#00A63E] text-white"><span>0</span> Copy
+    <button class="btn btn-active rounded-3xl px-5 py-2 bg-[#00A63E] text-white"><span id="copy-num" >0</span> Copy
     </button>
    </div>
   </nav>
 
 
-  <header class= "bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-white py-5" >
+  <header class= " bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-white py-5" >
     <div class="flex flex-col items-center">
         <img class="w-20" src="img/logo-dark.png" alt="">
     <h1 class="text-3xl font-bold m-3">Emergency Service Directory</h1>
@@ -46,47 +46,50 @@
   </header>
 
 
-  <main class="bg-green-50 flex justify-center items-center">
+  <main class="bg-green-50 flex sm:flex-row justify-center items-start">
 
-    <section id="container" class="w-11/12 py-10 justify-center m-[1800] grid grid-cols-12 gap-8 bg-">
-      <section id="left-section" class=" col-span-9">
+    <!-- <section id="container" class="lg:w-11/12 py-10 justify-center m-[1800] grid grid-cols-12 gap-8 "> -->
+    <section id="container" class="w-full sm:w-11/12 py-10 mx-10 flex flex-col sm:grid sm:grid-cols-12 gap-8 ">
+
+      <section id="left-section" class=" w-full  sm:col-span-9 order-2 sm:order-1">
       
-      <div id="main" class="grid grid-cols-3">
+      <div id="main" class="grid sm:grid-cols-1 lg:grid-cols-3">
 
-        <div id="contact" class=" p-5 shadow-xl m-2 bg-white rounded-2xl">
+        
+         <div id="cart-1" class=" p-5 shadow-xl m-2 bg-white rounded-2xl">
           <div class="flex items-center justify-between ">
             <img class="w-13 bg-[#FFE3E2] p-3 rounded-2xl " src="img/emergency.png" alt="">
-            <i class="fa-regular fa-heart"></i>
+            <i id="blank-heart" class="fa-regular fa-heart"></i>
         </div>
-            <h1 class="text-lg font-bold">National Emergency Number</h1>
+            <h1 id="natinal-title" class="text-lg font-bold">National Emergency Number</h1>
             <p class="text-gray-500">National Emergency</p>
-            <p class="text-lg font-bold pt-2">999</p>
+            <p id="natinal-number" class="text-lg font-bold pt-2 number-to-copy">999</p>
             <p class="bg-gray-100 w-10 rounded-2xl px-2 text-gray-500 ">All</p>
 
          <div class="flex gap-2 mt-5">
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
-              <i class="fa-regular fa-copy"></i>Copy
+              <i class="fa-regular fa-copy copy-button" onclick="copyAndCount(this)"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button id="call-btn-id" class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
        </div>
-        <div id="contact" class=" p-5 shadow-xl m-2 bg-white rounded-2xl">
+        <div class=" p-5 shadow-xl m-2 bg-white rounded-2xl ">
           <div class="flex items-center justify-between ">
             <img class="w-13 bg-[#FFE3E2] p-3 rounded-2xl " src="img/police.png" alt="">
-            <i class="fa-regular fa-heart"></i>
+            <i id=" blank-heart2"  class="fa-regular fa-heart"></i>
         </div>
             <h1 class="text-lg font-bold">Police Helpline Number</h1>
             <p class="text-gray-500">Police</p>
-            <p class="text-lg font-bold pt-2">999</p>
+            <p class="text-lg font-bold pt-2 number-to-copy">999</p>
             <p class="bg-gray-100 w-15 rounded-2xl px-2 text-gray-500 ">Police</p>
 
          <div class="flex gap-2 mt-5">
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
-              <i class="fa-regular fa-copy"></i>Copy
+              <i class="fa-regular fa-copy copy-button" onclick="copyAndCount(this)"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button id="contact2" class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn ">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
@@ -105,7 +108,7 @@
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
               <i class="fa-regular fa-copy"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
@@ -124,7 +127,7 @@
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
               <i class="fa-regular fa-copy"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
@@ -143,7 +146,7 @@
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
               <i class="fa-regular fa-copy"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
@@ -162,7 +165,7 @@
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
               <i class="fa-regular fa-copy"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn ">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
@@ -181,7 +184,7 @@
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
               <i class="fa-regular fa-copy"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
@@ -200,7 +203,7 @@
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
               <i class="fa-regular fa-copy"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
@@ -219,34 +222,36 @@
             <button class="btn  rounded-xl w-1/2 px-5 py-2 text-gray-500 ">
               <i class="fa-regular fa-copy"></i>Copy
             </button>
-            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white ">
+            <button class="btn btn-active w-1/2 rounded-xl px-5 py-2 bg-[#00A63E] text-white call-btn">
               <i class="fa-solid fa-phone"></i>Call
            </button>
          </div>
        </div>
 
-
       </div>
       
    </section>
 
-
-
-     <aside id="call-history" class=" shadow-xl bg-white rounded-2xl col-span-3">
+     <aside id="call-history-box" class="lg: shadow-xl bg-white rounded-2xl col-span-3  lg:w-full sm:col-span-3 mt-8 sm:mt-8 order-1 sm:order-2 ">
         <div class="flex m-5 justify-between ">
              <div class="flex items-center gap-2">
                <i class="fa-solid fa-clock-rotate-left"></i>
-               <h1>Call History</h1>
+               <h1 class="font-semibold">Call History</h1>
             </div>
            
-             <button class="btn btn-active  rounded-3xl px-5 py-5 bg-[#00A63E] text-white ">
+             <button id="clear-btn" class="btn btn-active rounded-3xl px-5 py-5 bg-[#00A63E] text-white ">
                 Clear
              </button>
-         
+             
         </div>
+
+        <div id="call-history">
+
+        </div>
+
     </aside>
   </section>
   </main>
-
+         <script src="script/index.js"></script>
 </body>
 </html>
