@@ -26,10 +26,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 // alert("calling")
                  const title =
      button.parentNode.parentNode.children[1].innerText; 
-     
     const num = 
     button.parentNode.parentNode.children[3].innerText;
-    
     alert("📞 Calling " + title + " : " + num + "....")
  
    
@@ -54,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     })
 })
-
  
     function getElement(id){
         const element = document.getElementById(id);
@@ -63,8 +60,6 @@ document.addEventListener("DOMContentLoaded", function(){
     
 
 const callbtns = document.getElementsByClassName("call-btn");
-
-
 for(let callButton of callbtns){
    callButton.addEventListener("click", function(){
 
@@ -79,8 +74,6 @@ for(let callButton of callbtns){
 
 
     const callAll = getElement("call-history").innerText;
-    
-    
     const callBox = getElement("call-history")
     const newCall = document.createElement("div");
     newCall.innerHTML = `
@@ -132,7 +125,3 @@ function copyAndCount(buttonElement){
     alert("Faild");
 });
 }
-//
-
-
-
